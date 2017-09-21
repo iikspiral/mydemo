@@ -13,16 +13,18 @@
 <link rel="stylesheet" href="${ctx }/resources/plugins/ace/assets/font-awesome/css/font-awesome.css" />
 <link href="${ctx}/resources/plugins/animate/animate.min.css" rel="stylesheet">
 <link href="${ctx}/resources/plugins/hplus/style.min.css" rel="stylesheet">
-
+<link href="${ctx}/resources/common/css/particleground.css" rel="stylesheet">
 <!--[if lt IE 9]>
 <meta http-equiv="refresh" content="0;ie.html" />
 <![endif]-->
 <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+
 </head>
 
 <body class="gray-bg">
-
-<div class="middle-box text-center loginscreen  animated fadeInDown">
+<div id="particles">
+    <div class="intro">
+<div class="middle-box text-center loginscreen animated fadeInDown">
     <div>
         <div>
 
@@ -47,9 +49,27 @@
         </form>
     </div>
 </div>
-
+    </div>
+</div>
 <script src="${ctx}/resources/plugins/jquery/jquery-2.2.4.min.js"></script>
 <script src="${ctx}/resources/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src='${ctx}/resources/common/js/particleground.min.js'></script>
+
+<script>
+    $(document).ready(function() {
+        //粒子背景特效
+        //可以根据下面表格中参数说明设定相应参数
+        $('#particles').particleground({
+            dotColor: '#659dff', //点的颜色
+            lineColor: '#659dff', //线的颜色
+            density: '10000',  //粒子数量
+            DotSize: '1', //粒子大小
+            lineWidth: '0.5', //线宽度
+            parallax: true,  //视差效果
+            parallaxMultiplier: '5'//数值越小视差效果越强
+        });
+    });
+</script>
 </body>
 
 </html>

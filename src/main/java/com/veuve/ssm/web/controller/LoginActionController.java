@@ -31,6 +31,7 @@ public class LoginActionController extends BaseController{
 
     @RequestMapping("/shiroLogin")
     public String login(@RequestParam String username, @RequestParam String password,Model model){
+        String viewAndModel = "/system/login";
         Subject currentUser = SecurityUtils.getSubject();
         if (!currentUser.isAuthenticated()){
             //将用户名和密码封装为UsernamePasswordToken对象
@@ -38,6 +39,9 @@ public class LoginActionController extends BaseController{
             token.setRememberMe(true);
             try {
                 currentUser.login(token);
+                List<Menu> lists = menuService.findMenuListAll();
+                model.addAttribute("menuList",lists);
+                viewAndModel = "/system/main";
                 logger.info("-------登录成功！");
             } catch (UnknownAccountException e) {
                 logger.info("-------登录失败【用户不存在】");
@@ -49,9 +53,7 @@ public class LoginActionController extends BaseController{
                 logger.info("-------登录失败【认证异常】");
             }
         }
-        List<Menu> lists = menuService.findMenuListAll();
-        model.addAttribute("menuList",lists);
-        return "/system/main";
+        return viewAndModel;
     }
 
 

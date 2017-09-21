@@ -3,13 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- spring的配置文件 管理引用的各类插件和框架 -->
+    <description>spring的配置文件 管理引用的各类插件和框架</description>
+
+    <!-- 引入ehcache二级缓存 -->
+    <import resource="spring-ehcache.xml"/>
 
     <!-- 引用mybatis框架 -->
     <import resource="spring-mybatis.xml"/>
 
     <!-- 引用shiro安全框架 -->
     <import resource="spring-shiro.xml"/>
-
 
 </beans>

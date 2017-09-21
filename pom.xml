@@ -157,10 +157,20 @@
 
         <!-- ehcache和redis必选其一，也可同时使用（需要注意） -->
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-ehcache</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache-core</artifactId>
             <version>${ehcache.version}</version>
         </dependency>
+
 
     </dependencies>
 

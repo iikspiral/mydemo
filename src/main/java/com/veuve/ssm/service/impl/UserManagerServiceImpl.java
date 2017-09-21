@@ -8,6 +8,7 @@ import com.veuve.ssm.common.util.JsonUtils;
 import com.veuve.ssm.dao.system.ITbUserDao;
 import com.veuve.ssm.model.system.User;
 import com.veuve.ssm.service.UserManagerService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
