@@ -1,18 +1,13 @@
-package com.veuve.ssm.common.controller;
+package com.veuve.ssm.common.base;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
-
-import com.alibaba.fastjson.JSONObject;
-import com.baomidou.mybatisplus.plugins.Page;
-import com.veuve.ssm.common.shiro.ShiroUser;
 import com.veuve.ssm.common.util.Charsets;
 import com.veuve.ssm.common.util.StringEscapeEditor;
 import com.veuve.ssm.common.util.URLUtils;
-import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -46,25 +41,6 @@ public abstract class BaseController {
          */
         binder.registerCustomEditor(String.class, new StringEscapeEditor());
     }
-
-    public <T> Page<T> getPage(int current, int size, String sort, String order){
-        Page<T> page = new Page<T>(current, size, sort);
-        if ("desc".equals(order)) {
-            page.setAsc(false);
-        } else {
-            page.setAsc(true);
-        }
-        return page;
-    }
-
-/*    public <T> PageInfo pageToPageInfo(Page<T> page) {
-        PageInfo pageInfo = new PageInfo();
-        pageInfo.setRows(page.getRecords());
-        pageInfo.setTotal(page.getTotal());
-        pageInfo.setOrder(page.getOrderByField());
-        return pageInfo;
-    }*/
-
 
     /**
      * redirect跳转

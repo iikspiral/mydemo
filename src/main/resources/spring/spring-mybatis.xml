@@ -44,48 +44,16 @@
         <property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}" />
         <!-- 关闭abanded连接时输出错误日志 -->
         <property name="logAbandoned" value="${jdbc.logAbandoned}" />
-
     </bean>
 
     <!--3.配置SqlSessionFactory对象 -->
-    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
-        <!-- 配置数据源 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 注入数据库连接池 -->
         <property name="dataSource" ref="dataSource"/>
         <!-- 配置MyBaties全局配置文件:mybatis-config.xml -->
         <property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"/>
         <!-- 扫描sql配置文件:mapper需要的xml文件 -->
         <property name="mapperLocations" value="classpath:/mapper/**/*.xml"/>
-        <!-- 配置包别名 -->
-        <property name="typeAliasesPackage" value="com.veuve.ssm.model.*"/>
-        <!-- MP 全局配置注入 -->
-        <property name="globalConfig" ref="globalConfig"/>
-    </bean>
-
-    <!-- 定义 MP 全局策略 -->
-    <bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
-        <!-- 主键策略配置 -->
-        <!-- 可选参数
-            AUTO->`0`("数据库ID自增")
-            INPUT->`1`(用户输入ID")
-            ID_WORKER->`2`("全局唯一ID")
-            UUID->`3`("全局唯一ID")
-        -->
-        <property name="idType" value="2"/>
-        <!-- 数据库类型配置 -->
-        <!-- 可选参数（默认mysql）
-            MYSQL->`mysql`
-            ORACLE->`oracle`
-            HSQL->`hsql`
-            SQLITE->`sqlite`
-            POSTGRE->`postgresql`
-        -->
-        <property name="dbType" value="mysql"/>
-        <!-- 全局表为下划线命名设置 true -->
-        <property name="dbColumnUnderline" value="true"/>
-        <!-- 自动填充处理器 -->
-        <property name="metaObjectHandler">
-            <bean class="com.veuve.ssm.common.mybatisplus.MyMetaObjectHandler"/>
-        </property>
     </bean>
 
     <!--4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->

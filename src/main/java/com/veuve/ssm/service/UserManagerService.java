@@ -23,7 +23,4 @@ public interface UserManagerService {
 
     int updateUser(User user);
 
-    //定义一个可以使用条件构造器的查询方法
-    JSONObject getUserPage(Map<String,Object> parameter);
-
 }

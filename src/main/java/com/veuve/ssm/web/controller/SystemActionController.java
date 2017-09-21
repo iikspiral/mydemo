@@ -1,13 +1,11 @@
 package com.veuve.ssm.web.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.baomidou.mybatisplus.plugins.Page;
-import com.veuve.ssm.common.controller.BaseController;
+import com.veuve.ssm.common.base.BaseController;
 import com.veuve.ssm.common.util.DateUtil;
 import com.veuve.ssm.common.util.SequenceUtil;
 import com.veuve.ssm.model.system.Dict;
@@ -47,7 +45,7 @@ public class SystemActionController extends BaseController{
         return "/system/userList";
     }
 
-	@RequestMapping(value = "/getUserJson1", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@RequestMapping(value = "/getUserJson", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public JSON findUserList(@RequestBody Map<String,Object> parameter){
 		return userManagerService.findUserList(parameter);
@@ -98,11 +96,6 @@ public class SystemActionController extends BaseController{
 		return jsnObj;
 	}
 
-	@RequestMapping(value = "/getUserJson", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-	@ResponseBody
-	public JSON findUserByEW(@RequestBody Map<String,Object> parameter){
-		return userManagerService.getUserPage(parameter);
-	}
 	//----------------------------------------------------------------------
 
 	@RequestMapping("/menuManager")

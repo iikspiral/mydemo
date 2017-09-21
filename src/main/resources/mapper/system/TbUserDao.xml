@@ -63,10 +63,4 @@
         select id,username,password,true_name,card_id,create_date from sys_user where id = #{id}
     </select>
 
-    <select id="selectMyPage" resultType="User">
-        SELECT * FROM sys_user
-        <where>
-            ${ew.sqlSegment}
-        </where>
-    </select>
 </mapper>

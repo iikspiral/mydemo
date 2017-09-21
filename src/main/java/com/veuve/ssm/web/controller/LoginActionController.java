@@ -1,9 +1,8 @@
 package com.veuve.ssm.web.controller;
 
-import com.veuve.ssm.common.controller.BaseController;
+import com.veuve.ssm.common.base.BaseController;
 import com.veuve.ssm.model.system.Menu;
 import com.veuve.ssm.service.MenuManagerService;
-import com.veuve.ssm.service.UserManagerService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;

@@ -11,12 +11,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
+        <!-- 单元测试 -->
         <junit.version>4.12</junit.version>
         <servlet.version>3.0.1</servlet.version>
         <spring.version>4.3.9.RELEASE</spring.version>
         <aspectjweaver.version>1.8.9</aspectjweaver.version>
         <logback.version>1.2.3</logback.version>
-        <mybatisplus.version>2.1.1</mybatisplus.version>
+        <mybatis-spring.version>1.3.1</mybatis-spring.version>
         <mysql.version>5.1.38</mysql.version>
         <cglib.version>3.2.5</cglib.version>
         <druid.version>1.0.29</druid.version>
@@ -77,9 +78,9 @@
             <artifactId>spring-orm</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus</artifactId>
-            <version>${mybatisplus.version}</version>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring.version}</version>
         </dependency>
         <!-- 分页插件 -->
         <dependency>
@@ -87,11 +88,11 @@
             <artifactId>mybatis-paginator</artifactId>
             <version>1.2.17</version>
         </dependency>
-        <!-- 模板引擎 -->
+        <!-- 代码生成器 -->
         <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity-engine-core</artifactId>
-            <version>2.0</version>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.3.2</version>
         </dependency>
 
         <!-- 数据库和数据库连接池 -->
