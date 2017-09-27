@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="${ctx }/resources/plugins/ace/assets/font-awesome/css/font-awesome.css" />
 <link href="${ctx}/resources/plugins/animate/animate.min.css" rel="stylesheet">
 <link href="${ctx}/resources/plugins/hplus/style.min.css" rel="stylesheet">
-<link href="${ctx}/resources/common/css/particleground.css" rel="stylesheet">
+<link href="${ctx}/resources/js/particleground.css" rel="stylesheet">
 <!--[if lt IE 9]>
 <meta http-equiv="refresh" content="0;ie.html" />
 <![endif]-->

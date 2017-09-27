@@ -14,4 +14,7 @@
     <!-- 引用shiro安全框架 -->
     <import resource="spring-shiro.xml"/>
 
+    <!-- 引入aop切片 -->
+    <import resource="spring-druid.xml"/>
+
 </beans>
